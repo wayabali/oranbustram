@@ -1,7 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';  // Import Link for navigation
+import { getRouteData } from './getRouteData';  // Assuming getRouteData is exported from a separate file
 import MapComponent from './MapComponent';
-import { getRouteData } from './getRouteData';  // Adjust path if needed
 
 function ItineraryDetails() {
   const { transport, itinerary } = useParams(); // Get transport and itinerary from the URL
@@ -30,7 +30,12 @@ function ItineraryDetails() {
           {stations.length > 0 ? (
             <ul>
               {stations.map((station, index) => (
-                <li key={index}>{station.name}</li> 
+                <li key={index}>
+                  {/* Link to the station details page with stationId */}
+                  <Link to={`/station-details/${transport}/${itinerary}/${station.id}`}>
+                    {station.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           ) : (
