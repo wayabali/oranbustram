@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.landing-page {
+  background-image: url('./images/background.jpg'); /* Make sure to add a background image */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+}
+
+.button-container .btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-container .btn:hover {
+  background-color: #0056b3;
+}
+
+.itinerary-selection, .itinerary-details {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.itinerary-selection .btn {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.map-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+.itinerary-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.route-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.route-info h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.route-info .directions {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.station-list {
+  width: 30%;
+  padding-right: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.station-list h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.station-list ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.station-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.station-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.map-container {
+  width: 65%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
