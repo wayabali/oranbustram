@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>©2025 TBM Transport | All Rights Reserved</p>
+        <p>©2025 ORAN Transport | All Rights Reserved</p>
         
         <div className="footer-description">
           <p>TBM Transport is dedicated to providing reliable and efficient transportation services in the city. We offer easy access to bus and tram schedules, tickets, and real-time traffic information to make your journey smoother and more convenient.</p>
