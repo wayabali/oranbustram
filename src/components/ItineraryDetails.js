@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';  // Import Link for navigation
 import { getRouteData } from './getRouteData';  // Assuming getRouteData is exported from a separate file
 import MapComponent from './MapComponent';
@@ -13,6 +13,19 @@ function ItineraryDetails() {
   const stations = routeData?.stations || [];
   const routeCoordinates = routeData?.coordinates ? [routeData.coordinates] : [];
 
+  // State for the search query
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter stations based on the search query
+  const filteredStations = stations.filter(station =>
+    station.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Handle the change in the search input
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="itinerary-details">
       <div className="route-info">
@@ -26,10 +39,20 @@ function ItineraryDetails() {
       <div className="details-container">
         <div className="station-list">
           <h3>Stations</h3>
-          {/* Only map if stations array is available */}
-          {stations.length > 0 ? (
+
+          {/* Search input for stations */}
+          <input
+            type="text"
+            placeholder="Search stations..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="station-search"
+          />
+
+          {/* Display filtered stations */}
+          {filteredStations.length > 0 ? (
             <ul>
-              {stations.map((station, index) => (
+              {filteredStations.map((station, index) => (
                 <li key={index}>
                   {/* Link to the station details page with stationId */}
                   <Link to={`/station-details/${transport}/${itinerary}/${station.id}`}>
